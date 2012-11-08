@@ -10,6 +10,12 @@
 		C913E6A91645946B00348CF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C913E6A81645946B00348CF1 /* Foundation.framework */; };
 		C913E6AC1645946B00348CF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C913E6AB1645946B00348CF1 /* main.m */; };
 		C913E6B01645946B00348CF1 /* ShortestPath.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C913E6AF1645946B00348CF1 /* ShortestPath.1 */; };
+		C9304D7A164BA851000A7E05 /* ShortestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C9304D79164BA851000A7E05 /* ShortestPath.m */; };
+		C9304D7E164BA8A0000A7E05 /* DataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9304D7D164BA8A0000A7E05 /* DataBuilder.m */; };
+		C9304D82164BA99B000A7E05 /* SignificantPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C9304D81164BA99B000A7E05 /* SignificantPoint.m */; };
+		C9304D86164BBB3E000A7E05 /* FlightRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C9304D85164BBB3E000A7E05 /* FlightRoute.m */; };
+		C9304D89164BF247000A7E05 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9304D88164BF247000A7E05 /* Airport.m */; };
+		C9304D8C164C0058000A7E05 /* Haversine.m in Sources */ = {isa = PBXBuildFile; fileRef = C9304D8B164C0058000A7E05 /* Haversine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +37,19 @@
 		C913E6AB1645946B00348CF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C913E6AE1645946B00348CF1 /* ShortestPath-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShortestPath-Prefix.pch"; sourceTree = "<group>"; };
 		C913E6AF1645946B00348CF1 /* ShortestPath.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ShortestPath.1; sourceTree = "<group>"; };
+		C9304D78164BA851000A7E05 /* ShortestPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortestPath.h; sourceTree = "<group>"; };
+		C9304D79164BA851000A7E05 /* ShortestPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortestPath.m; sourceTree = "<group>"; };
+		C9304D7C164BA8A0000A7E05 /* DataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBuilder.h; sourceTree = "<group>"; };
+		C9304D7D164BA8A0000A7E05 /* DataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBuilder.m; sourceTree = "<group>"; };
+		C9304D80164BA99B000A7E05 /* SignificantPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignificantPoint.h; sourceTree = "<group>"; };
+		C9304D81164BA99B000A7E05 /* SignificantPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignificantPoint.m; sourceTree = "<group>"; };
+		C9304D84164BBB3E000A7E05 /* FlightRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightRoute.h; sourceTree = "<group>"; };
+		C9304D85164BBB3E000A7E05 /* FlightRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightRoute.m; sourceTree = "<group>"; };
+		C9304D87164BF247000A7E05 /* Airport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
+		C9304D88164BF247000A7E05 /* Airport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		C9304D8A164C0057000A7E05 /* Haversine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Haversine.h; sourceTree = "<group>"; };
+		C9304D8B164C0058000A7E05 /* Haversine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Haversine.m; sourceTree = "<group>"; };
+		C9304D8D164C1DD5000A7E05 /* debug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = debug; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +92,12 @@
 		C913E6AA1645946B00348CF1 /* ShortestPath */ = {
 			isa = PBXGroup;
 			children = (
+				C9304D83164BAA92000A7E05 /* Object */,
+				C9304D7F164BA97C000A7E05 /* DTO */,
 				C913E6AB1645946B00348CF1 /* main.m */,
 				C913E6AF1645946B00348CF1 /* ShortestPath.1 */,
 				C913E6AD1645946B00348CF1 /* Supporting Files */,
+				C9304D8D164C1DD5000A7E05 /* debug */,
 			);
 			path = ShortestPath;
 			sourceTree = "<group>";
@@ -86,6 +108,32 @@
 				C913E6AE1645946B00348CF1 /* ShortestPath-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9304D7F164BA97C000A7E05 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C9304D80164BA99B000A7E05 /* SignificantPoint.h */,
+				C9304D81164BA99B000A7E05 /* SignificantPoint.m */,
+				C9304D84164BBB3E000A7E05 /* FlightRoute.h */,
+				C9304D85164BBB3E000A7E05 /* FlightRoute.m */,
+				C9304D87164BF247000A7E05 /* Airport.h */,
+				C9304D88164BF247000A7E05 /* Airport.m */,
+			);
+			name = DTO;
+			sourceTree = "<group>";
+		};
+		C9304D83164BAA92000A7E05 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				C9304D78164BA851000A7E05 /* ShortestPath.h */,
+				C9304D79164BA851000A7E05 /* ShortestPath.m */,
+				C9304D7C164BA8A0000A7E05 /* DataBuilder.h */,
+				C9304D7D164BA8A0000A7E05 /* DataBuilder.m */,
+				C9304D8A164C0057000A7E05 /* Haversine.h */,
+				C9304D8B164C0058000A7E05 /* Haversine.m */,
+			);
+			name = Object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C913E6AC1645946B00348CF1 /* main.m in Sources */,
+				C9304D7A164BA851000A7E05 /* ShortestPath.m in Sources */,
+				C9304D7E164BA8A0000A7E05 /* DataBuilder.m in Sources */,
+				C9304D82164BA99B000A7E05 /* SignificantPoint.m in Sources */,
+				C9304D86164BBB3E000A7E05 /* FlightRoute.m in Sources */,
+				C9304D89164BF247000A7E05 /* Airport.m in Sources */,
+				C9304D8C164C0058000A7E05 /* Haversine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +290,7 @@
 				C913E6B51645946B00348CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
