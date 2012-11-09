@@ -64,6 +64,9 @@
                           andArrivalPoint:(SignificantPoint *)newArrivalPoint {
     NSUInteger countPoint = [points count];
     double matrix[countPoint][countPoint];
+    BOOL debug = YES;
+    
+    if(debug) printf("\n\n------------------------- Make matrix -------------------------\n\n");
     
     for(int i = 0; i < countPoint; i++){
         for(int j = 0; j < countPoint; j++){
@@ -75,14 +78,23 @@
         SignificantPoint *thisPoint = [points objectAtIndex:i];
         matrix[i][i] = 0;
         
+        if(debug) printf("Check [%6s] point.\n", [thisPoint.name UTF8String]);
+        
         for(FlightRoute *route in routes) {
             int j = 0;
             
             for(NSString *pointName in route.pointNameArray) {
                 int pointIndex = [self significantPointIndexWithName:pointName];
                 
-                if(pointIndex == i && ++j != [route.pointNameArray count]) {
+//                if(DEBUG && [route.name isEqualToString:@"Y64"]){
+//                    printf(" %s(%d) ", [pointName UTF8String], pointIndex);
+//                }
+                
+                j++;
+                if(pointIndex == i && j != [route.pointNameArray count]) {
                     NSString *strNextPoint = [route.pointNameArray objectAtIndex:j];
+                    if(debug) printf("\t%s-%s", [route.name UTF8String], [strNextPoint UTF8String]);
+                    
                     int nextPointIndex = [self significantPointIndexWithName:strNextPoint];
                     SignificantPoint *nextPoint = [points objectAtIndex:nextPointIndex];
                     Haversine *haversign = [[Haversine alloc] initWithLat1:thisPoint.latitude
@@ -94,6 +106,8 @@
                     matrix[i][nextPointIndex] = weight;
                 }
             }
+            
+            //printf("\n");
             
             // 뒤로도 가능하기 때문에 왕복
             //j = (int)[route.pointNameArray count];
@@ -115,16 +129,21 @@
                 }
             }
         }
+        
+        if(debug) printf("\n");
     }
     
+    printf("   ");
     for(int i = 0; i < countPoint; i++){
         printf("%2d", i % 100);
     }
+    printf("\n");
     for(int i = 0; i < countPoint; i++){
+        printf("%3d", i);
         for(int j = 0; j < countPoint; j++){
-            if(matrix[i][j] == 0.0) printf("0 ");
+            if(matrix[i][j] == 0.0) printf(" 0");
             else if(matrix[i][j] == MAX_WEIGHT) printf("  ");
-            else if(matrix[i][j] > 0.0) printf("1 ");
+            else if(matrix[i][j] > 0.0) printf(" 1");
             else printf("  ");
         }
         printf("\n");
@@ -132,7 +151,7 @@
     
     double distance[countPoint];
     BOOL visited[countPoint];
-    NSUInteger path[countPoint];
+    int path[countPoint];
     const NSUInteger departureIndex = [self significantPointIndexWithName:newDeparturePoint.name];
     const NSUInteger arrivalIndex = [self significantPointIndexWithName:newArrivalPoint.name];
     
@@ -141,7 +160,7 @@
         visited[i] = NO;
         
         if(distance[i] > 0 && distance[i] < MAX_WEIGHT) {
-            path[i] = departureIndex;
+            path[i] = (int)departureIndex;
         } else {
             path[i] = -1;
         }
@@ -169,7 +188,7 @@
             if(distance[minIndex] + matrix[minIndex][j] >= distance[j]) continue;
             
             distance[j] = distance[minIndex] + matrix[minIndex][j];
-            path[j] = minIndex;
+            path[j] = (int)minIndex;
         }
     }
     
@@ -177,7 +196,16 @@
     
     for (int i = 0; i < countPoint; i++){
         int cv = i;
-        printf("%s : \n", [((SignfinicantPoint *)[points objectAtIndex:i]).name UTF8String]);
+        SignificantPoint *point = [points objectAtIndex:cv];
+        printf("To %s : %s", [point.name UTF8String], [point.name UTF8String]);
+        
+        while(path[cv] >= 0){
+            SignificantPoint *point1 = [points objectAtIndex:path[cv]];
+            printf("<-[%s]", [point1.name UTF8String]);
+            cv = path[cv];
+        }
+        
+        printf("\n");
     }
 }
 

@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShortestPath/ShortestPath.m"
-         timestampString = "374087723.322079"
+         timestampString = "374099046.454478"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
          landmarkName = "-calcShortestPathWithDeparturePoint:andArrivalPoint:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShortestPath/ShortestPath.m"
-         timestampString = "374087723.322079"
+         timestampString = "374099046.454478"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "177"
-         endingLineNumber = "177"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
+         landmarkName = "-calcShortestPathWithDeparturePoint:andArrivalPoint:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShortestPath/ShortestPath.m"
+         timestampString = "374098156.191314"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "-calcShortestPathWithDeparturePoint:andArrivalPoint:"
          landmarkType = "5">
       </FileBreakpoint>

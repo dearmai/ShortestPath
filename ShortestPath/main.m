@@ -73,7 +73,7 @@ int main(int argc, const char * argv[])
         Airport *departureAirport = [airportArray objectAtIndex:0];
         Airport *arrivalAirport = [airportArray objectAtIndex:18];
         
-        //debugMessage(pointArray, routeArray, airportArray);
+        debugMessage(pointArray, routeArray, airportArray);
         
         ShortestPath *instance = [[ShortestPath alloc] initWithPoints:pointArray
                                                         andRoutes:routeArray
